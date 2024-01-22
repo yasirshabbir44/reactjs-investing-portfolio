@@ -8,6 +8,8 @@ import PriceSection from '../components/section/PriceSection';
 import CompaniesSection from '../components/section/CompaniesSection';
 import ProfileSection from '../components/section/ProfileSection';
 import NewsSection from '../components/section/NewsSection';
+import PriceRangeSection from "../components/section/PriceRangeSection";
+import TitleSection from "../components/section/TitleSection";
 
 
 const HomePage = () => {
@@ -55,15 +57,20 @@ const HomePage = () => {
     <div style={{ padding: '16px' }}>
       <Row gutter={[16, 16]}>
         <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-          <CustomCard title="Apple Inc (AAPL)">
-            {/* Content for the card */}
-          </CustomCard>
+          <TitleSection/>
         </Col>
 
         <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-          <CustomCard title="Day's Range & 52-week Range">
-            {/* Content for the card */}
-          </CustomCard>
+          <PriceRangeSection
+              daysRange="$192.26 - $195.10"
+              weeksRange="$137.90 - $199.62"
+              previousClose="$191.55"
+              open="$192.26"
+              volume="20M"
+          />
+        </Col>
+        <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+          <NewsSection />
         </Col>
       </Row>
       <Row gutter={[16, 16]}>
@@ -71,19 +78,17 @@ const HomePage = () => {
           <CompaniesSection />
         </Col>
 
-        <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+        <Col span={16}>
           <ProfileSection />
         </Col>
 
-        <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-          <NewsSection />
-        </Col>
+
       </Row>
 
-      <Row gutter={[16, 16]}>
+      <Row>
 
 
-        <Col  span={22}>
+        <Col  span={24}>
           <PriceSection />
         </Col>
 
