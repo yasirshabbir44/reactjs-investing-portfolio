@@ -19,7 +19,7 @@ const HomePage = () => {
   const startDate = new Date('2022-01-01');
   const endDate = new Date('2022-04-10'); // Adjust end date as needed
   const minRandomValue = 100;
-  const maxRandomValue = 150;
+  const maxRandomValue = 250;
   const chartData = [
     {
       id: 'AAPL',
