@@ -10,47 +10,21 @@ import ProfileSection from '../components/section/ProfileSection';
 import NewsSection from '../components/section/NewsSection';
 import PriceRangeSection from "../components/section/PriceRangeSection";
 import TitleSection from "../components/section/TitleSection";
+import GraphSection from "../components/section/GraphSection";
+import {generateRandomData} from "../util/Util";
 
 
 const HomePage = () => {
+
+  const startDate = new Date('2022-01-01');
+  const endDate = new Date('2022-04-10'); // Adjust end date as needed
+  const minRandomValue = 100;
+  const maxRandomValue = 150;
   const chartData = [
     {
       id: 'AAPL',
-      data: [
-        { x: '2022-01-01', y: 120 },
-        { x: '2022-02-01', y: 130 },
-        { x: '2022-03-01', y: 110 },
-        // Add more data points as needed
-      ],
+      data: generateRandomData(startDate, endDate, minRandomValue, maxRandomValue),
     },
-  ];
-
-  const tableData = [
-    {
-      key: '1',
-      date: '2022-01-01',
-      open: 120,
-      high: 130,
-      low: 110,
-      close: 115,
-    },
-    {
-      key: '2',
-      date: '2022-02-01',
-      open: 130,
-      high: 140,
-      low: 120,
-      close: 135,
-    },
-    {
-      key: '3',
-      date: '2022-03-01',
-      open: 110,
-      high: 120,
-      low: 100,
-      close: 105,
-    },
-    // Add more rows as needed
   ];
 
   return (
@@ -85,6 +59,19 @@ const HomePage = () => {
 
       </Row>
 
+
+
+
+      {/*<Row gutter={[16, 16]}>*/}
+      {/*  <Col xs={24} sm={24} md={24} lg={24} xl={24}>*/}
+      {/*    <GraphSection graphData={graphData} />*/}
+      {/*  </Col>*/}
+      {/*</Row>*/}
+
+
+
+      <h1>Historical Data</h1>
+      <StockChart data={chartData} />
       <Row>
 
 
@@ -93,12 +80,6 @@ const HomePage = () => {
         </Col>
 
       </Row>
-
-
-
-      <h1>Historical Data</h1>
-      <StockChart data={chartData} />
-      <StockTable data={tableData} />
     </div>
   );
 };
