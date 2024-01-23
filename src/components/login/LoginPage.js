@@ -1,6 +1,6 @@
 // LoginPage.js
 import React, { useState } from 'react';
-import { Form, Input, Button, Typography } from 'antd';
+import {Form, Input, Button, Typography, message} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,10 +11,15 @@ const LoginPage = ({ onLogin }) => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    // For simplicity, predefined set of credentials
+    const validCredentials = {
+        username: 'yasir',
+        password: 'yasir',
+    };
     const handleLogin = () => {
         // Perform your authentication logic here
         // For simplicity, always consider it successful
-        const isAuthenticated = true;
+        const isAuthenticated = (username === validCredentials.username && password === validCredentials.password);
 
         if (isAuthenticated) {
             // Update the app state to indicate that the user is logged in
@@ -23,6 +28,10 @@ const LoginPage = ({ onLogin }) => {
             localStorage.setItem('loggedInUser', JSON.stringify({ username }));
             // Redirect to the home page
             navigate('/');
+            // Show success message
+            message.success('Login successful!');
+        }else{
+            message.error('Invalid username or password');
         }
     };
 
