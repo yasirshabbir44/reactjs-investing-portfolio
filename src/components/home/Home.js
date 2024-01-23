@@ -11,6 +11,8 @@ import TitleSection from "./section/TitleSection";
 import {generateRandomData} from "../../util/Util";
 import StockFilters from "./section/StockFilters";
 import AppHeader from "../AppHeader";
+import AppFooter from "../AppFooter";
+import '../../style.css'; // Import the common styles
 
 
 const HomePage = () => {
@@ -90,6 +92,8 @@ const HomePage = () => {
 
                 </Row>
             </div>
+
+           <AppFooter/>
         </div>
     );
 };

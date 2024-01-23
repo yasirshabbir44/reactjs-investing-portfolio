@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import {Button, Form, Input, message, Typography} from 'antd';
 import {LockOutlined, UserOutlined} from '@ant-design/icons';
 import {useNavigate} from 'react-router-dom';
+import '../../style.css'; // Import the common styles
 
 const {Title} = Typography;
 
@@ -36,43 +37,45 @@ const LoginPage = ({onLogin}) => {
     };
 
     return (
-        <div style={{maxWidth: '300px', margin: 'auto'}}>
-            <Title level={3}>Login Page</Title>
-            <Form
-                name="loginForm"
-                initialValues={{remember: true}}
-                onFinish={handleLogin}
-                size="large"
-            >
-                <Form.Item
-                    name="username"
-                    rules={[{required: true, message: 'Please input your username!'}]}
+        <div className="container"> {/* Apply common styles */}
+            <div className="formContainer"> {/* Apply common styles */}
+                <Title level={3}>Login</Title>
+                <Form
+                    name="loginForm"
+                    initialValues={{ remember: true }}
+                    onFinish={handleLogin}
+                    size="large"
                 >
-                    <Input
-                        prefix={<UserOutlined className="site-form-item-icon"/>}
-                        placeholder="Username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                </Form.Item>
-                <Form.Item
-                    name="password"
-                    rules={[{required: true, message: 'Please input your password!'}]}
-                >
-                    <Input.Password
-                        prefix={<LockOutlined className="site-form-item-icon"/>}
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" block>
-                        Log in
-                    </Button>
-                </Form.Item>
-            </Form>
+                    <Form.Item
+                        name="username"
+                        rules={[{ required: true, message: 'Please input your username!' }]}
+                    >
+                        <Input
+                            prefix={<UserOutlined style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            placeholder="Username"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        name="password"
+                        rules={[{ required: true, message: 'Please input your password!' }]}
+                    >
+                        <Input.Password
+                            prefix={<LockOutlined style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            type="password"
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </Form.Item>
+                    <Form.Item>
+                        <Button type="primary" htmlType="submit" block>
+                            Log in
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </div>
         </div>
     );
 };

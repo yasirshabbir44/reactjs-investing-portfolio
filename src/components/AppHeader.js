@@ -15,14 +15,17 @@ const AppHeader = () => {
         // For example, you can redirect to a logout page or dispatch a logout action.
     };
   return (
-      <Header>
+      <Header style={{ padding: '0' }}>
+
           <div className="logo" />
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']} style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Menu.Item key="1">Home</Menu.Item>
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Menu.Item key="1"></Menu.Item>
+              <Menu.Item key="2">Home</Menu.Item>
               {/* Add more menu items as needed */}
-              <Menu.Item key="2" icon={<LogoutOutlined />} style={{ marginLeft: 'auto' }} onClick={handleLogout}>Logout</Menu.Item>
+              <Menu.Item key="3" icon={<LogoutOutlined />} style={{ marginLeft: 'auto' }} onClick={handleLogout}>Logout</Menu.Item>
           </Menu>
       </Header>
+
   );
 };
 
