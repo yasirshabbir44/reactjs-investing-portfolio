@@ -56,7 +56,7 @@ const HomePage = () => {
                             volume="20M"
                         />
                     </Col>
-                    <Col  span={8}>
+                    <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                         <CompaniesSection/>
                     </Col>
 
@@ -64,7 +64,7 @@ const HomePage = () => {
                 </Row>
                 <Row gutter={[16, 16]}>
 
-                    <Col span={16}>
+                    <Col  xs={24} sm={24} md={16} lg={16} xl={16}>
                         <ProfileSection/>
                     </Col>
 

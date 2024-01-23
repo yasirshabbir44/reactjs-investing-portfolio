@@ -1,7 +1,7 @@
 // HistoricalDataSection.js
 import React from 'react';
 import { Table } from 'antd';
-
+import '../../../style.css'; // Import the common styles
 
 const HistoricalDataSection = () => {
   // Realistic data for 30 days with varying values
@@ -73,7 +73,7 @@ const HistoricalDataSection = () => {
   ];
 
   return (
-      <Table dataSource={data} columns={columns} />
+      <Table dataSource={data} columns={columns} className="responsive-table"/>
   );
 };
 
