@@ -2,10 +2,10 @@
 import React, {useState} from 'react';
 import {Button, Form, Input, message, Typography} from 'antd';
 import {LockOutlined, UserOutlined} from '@ant-design/icons';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate,Link} from 'react-router-dom';
 import '../../style.css'; // Import the common styles
 
-const {Title} = Typography;
+const { Title, Text } = Typography;
 
 const LoginPage = ({onLogin}) => {
     const [username, setUsername] = useState('');
@@ -15,7 +15,7 @@ const LoginPage = ({onLogin}) => {
     // For simplicity, predefined set of credentials
     const validCredentials = {
         username: 'yasir',
-        password: 'yasir',
+        password: 'dubaiHolding123',
     };
     const handleLogin = () => {
         // Perform your authentication logic here
@@ -37,9 +37,13 @@ const LoginPage = ({onLogin}) => {
     };
 
     return (
-        <div className="container"> {/* Apply common styles */}
-            <div className="formContainer"> {/* Apply common styles */}
-                <Title level={3}>Login</Title>
+        <div className="login-container"> {/* Apply common styles */}
+            <div className="form-container"> {/* Apply common styles */}
+                <div className="logo-container">
+                    {/* Replace 'your-logo.png' with your actual logo */}
+                    <img src="https://dubaiholding.com/wp-content/themes/dubaiholding/images/foo-logo.png" alt="Logo" className="logo" />
+                </div>
+
                 <Form
                     name="loginForm"
                     initialValues={{ remember: true }}
@@ -74,6 +78,9 @@ const LoginPage = ({onLogin}) => {
                             Log in
                         </Button>
                     </Form.Item>
+                    <Text>
+                        <Link to="/forgot-password">Forgot Password?</Link>
+                    </Text>
                 </Form>
             </div>
         </div>
