@@ -9,6 +9,7 @@ import NewsSection from './section/NewsSection';
 import PriceRangeSection from "./section/PriceRangeSection";
 import TitleSection from "./section/TitleSection";
 import {generateRandomData} from "../../util/Util";
+import StockFilters from "./section/StockFilters";
 
 
 const HomePage = () => {
@@ -23,6 +24,15 @@ const HomePage = () => {
       data: generateRandomData(startDate, endDate, minRandomValue, maxRandomValue),
     },
   ];
+    const handleDateChange = (date, dateString) => {
+        // Handle date change logic
+        console.log('Selected Date:', dateString);
+    };
+
+    const handleRangeChange = (e) => {
+        // Handle range change logic
+        console.log('Selected Range:', e.target.value);
+    };
 
   return (
     <div style={{ padding: '16px' }}>
@@ -69,6 +79,7 @@ const HomePage = () => {
 
       <h1>Historical Data</h1>
 
+        <StockFilters onDateChange={handleDateChange} onRangeChange={handleRangeChange} />
         <Row>
 
 

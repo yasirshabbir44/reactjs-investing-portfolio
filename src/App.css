@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+
+.ant-card .ant-card-body {
+  background-color: #f0f2f5;
+  padding: 10px !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Customize the font color and padding of .ant-card-body */
+.ant-card-body {
+  color: #333;
+  padding: 16px;
+}

@@ -1,25 +1,35 @@
 // PriceRangeSection.js
 import React from 'react';
 import CustomCard from '../card/CustomCard';
+import { Typography, Alert } from 'antd';
+
+const { Title, Paragraph, Text } = Typography;
 
 const PriceRangeSection = ({ daysRange, weeksRange, previousClose, open, volume }) => {
     return (
         <CustomCard title="Day's Range & 52-week Range">
-            <p>
-                <strong>Day's Range:</strong> {daysRange}
-            </p>
-            <p>
-                <strong>52-week Range:</strong> {weeksRange}
-            </p>
-            <p>
-                <strong>Previous Close:</strong> {previousClose}
-            </p>
-            <p>
-                <strong>Open:</strong> {open}
-            </p>
-            <p>
-                <strong>Volume:</strong> {volume}
-            </p>
+            <Title level={3}>Stock Details</Title>
+
+            <Paragraph>
+                <Text strong>Day's Range:</Text> {daysRange}
+            </Paragraph>
+
+            <Paragraph>
+                <Text strong>52-week Range:</Text> {weeksRange}
+            </Paragraph>
+
+            <Paragraph>
+                <Text strong>Previous Close:</Text> {previousClose}
+            </Paragraph>
+
+            <Paragraph>
+                <Text strong>Open:</Text> {open}
+            </Paragraph>
+
+            <Paragraph>
+                <Text strong>Volume:</Text> {volume}
+            </Paragraph>
+
             {/* Add more details as needed */}
         </CustomCard>
     );
