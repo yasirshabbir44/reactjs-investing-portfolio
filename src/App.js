@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Layout } from 'antd';
 import AppHeader from './components/AppHeader';
-import HomePage from './pages/Home';
+import HomePage from './components/home/Home';
 
 const { Content, Footer } = Layout;
 

@@ -1,6 +1,6 @@
 // CompaniesSection.js
 import React from 'react';
-import CustomCard from '../CustomCard';
+import CustomCard from '../card/CustomCard';
 
 const CompaniesSection = () => {
   return (

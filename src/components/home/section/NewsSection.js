@@ -1,6 +1,6 @@
 // NewsSection.js
 import React from 'react';
-import CustomCard from '../CustomCard';
+import CustomCard from '../card/CustomCard';
 
 const NewsSection = () => {
   return (

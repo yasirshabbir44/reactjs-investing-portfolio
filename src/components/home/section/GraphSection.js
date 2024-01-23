@@ -1,6 +1,6 @@
 // GraphSection.js
 import React from 'react';
-import CustomCard from '../CustomCard';
+import CustomCard from '../card/CustomCard';
 import { ResponsiveLine } from '@nivo/line';
 
 const GraphSection = ({ graphData }) => {

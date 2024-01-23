@@ -1,6 +1,6 @@
 // PriceRangeSection.js
 import React from 'react';
-import CustomCard from '../CustomCard';
+import CustomCard from '../card/CustomCard';
 
 const PriceRangeSection = ({ daysRange, weeksRange, previousClose, open, volume }) => {
     return (
