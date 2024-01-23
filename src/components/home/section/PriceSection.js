@@ -10,7 +10,7 @@ const PriceSection = () => {
         <strong>Last Price:</strong> $195.01
       </p>
       <p>
-        <strong>Change:</strong> +3.46 (+1.80%)
+          <strong>Change:</strong> <span style={{ color: 'green'}}>+3.46 (+1.80%)</span>
       </p>
       <HistoricalDataSection />
     </CustomCard>
