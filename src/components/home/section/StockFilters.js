@@ -22,13 +22,8 @@ const StockFilters = ({ onDateChange, onRangeChange }) => {
     return (
         <div className="filters-container">
             {/* Date Filter */}
-            <DatePicker
-                onChange={(date, dateString) => handleDateChange(date, dateString)}
-                disabledDate={disabledDate}
-                style={{ marginRight: '16px' }}
-                placeholder="Select a Date"
-            />
 
+            Date Range Filter :
             {/* Range Filter */}
             <RangePicker
                 style={{ width: '30%' }}
@@ -36,6 +31,7 @@ const StockFilters = ({ onDateChange, onRangeChange }) => {
                 allowEmpty={[true, true]}
                 format="MM/DD/YYYY"
                 disabledDate={disabledDate}
+
             />
         </div>
     );

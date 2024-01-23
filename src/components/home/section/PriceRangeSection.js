@@ -30,6 +30,16 @@ const PriceRangeSection = ({ daysRange, weeksRange, previousClose, open, volume 
                 <Text strong>Volume:</Text> {volume}
             </Paragraph>
 
+            <Paragraph>
+                <strong>Forward P/E:</strong> 28.8
+            </Paragraph>
+            <Paragraph>
+                <strong>EPS (Earnings Per Share):</strong> $6.40
+            </Paragraph>
+            <Paragraph>
+                <strong>Dividend Yield:</strong> 1.2%
+            </Paragraph>
+
             {/* Add more details as needed */}
         </CustomCard>
     );

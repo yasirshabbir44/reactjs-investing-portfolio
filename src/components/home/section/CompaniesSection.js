@@ -29,6 +29,12 @@ const data = [
         changePercentage: 1.2,
         logo: 'https://companiesmarketcap.com/img/company-logos/64/NVDA.webp', // Replace with actual logo URL
     },
+    {
+        companyName: 'Meta Platforms (Facebook)',
+        stockPrice: 381.78,
+        changePercentage: 3.2,
+        logo: 'https://companiesmarketcap.com/img/company-logos/256/META.webp', // Replace with actual logo URL
+    },
     // Add more companies as needed
 ];
 
