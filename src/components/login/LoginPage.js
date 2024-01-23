@@ -19,7 +19,8 @@ const LoginPage = ({ onLogin }) => {
         if (isAuthenticated) {
             // Update the app state to indicate that the user is logged in
             onLogin(username);
-
+            // Store user information in localStorage
+            localStorage.setItem('loggedInUser', JSON.stringify({ username }));
             // Redirect to the home page
             navigate('/');
         }

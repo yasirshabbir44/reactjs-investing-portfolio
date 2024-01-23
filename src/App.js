@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from '../src/components/login/LoginPage';
 import HomePage from '../src/components/home/Home';
@@ -14,6 +14,14 @@ const App = () => {
   const handleLogin = (username) => {
     setLoggedInUser(username);
   };
+
+    useEffect(() => {
+        // Check localStorage for user information on page load
+        const storedUser = localStorage.getItem('loggedInUser');
+        if (storedUser) {
+            setLoggedInUser(JSON.parse(storedUser));
+        }
+    }, []);
 
   return (
 

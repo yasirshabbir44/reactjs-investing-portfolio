@@ -68,7 +68,16 @@ const HomePage = () => {
 
 
       <h1>Historical Data</h1>
-      <StockChart data={chartData} />
+
+        <Row>
+
+
+            <Col  span={24}>
+                <StockChart data={chartData} />
+            </Col>
+
+        </Row>
+
       <Row>
 
 
