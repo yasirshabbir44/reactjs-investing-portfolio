@@ -54,19 +54,21 @@ const HomePage = () => {
                             volume="20M"
                         />
                     </Col>
-                    <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-                        <NewsSection/>
-                    </Col>
-                </Row>
-                <Row gutter={[16, 16]}>
-                    <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+                    <Col  span={8}>
                         <CompaniesSection/>
                     </Col>
+
+
+                </Row>
+                <Row gutter={[16, 16]}>
 
                     <Col span={16}>
                         <ProfileSection/>
                     </Col>
 
+                    <Col xs={24} sm={24} md={8} lg={8} xl={8}>
+                        <NewsSection/>
+                    </Col>
 
                 </Row>
                 <h1>Historical Data</h1>
