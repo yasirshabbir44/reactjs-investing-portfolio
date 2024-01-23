@@ -3,10 +3,8 @@ import React, {useEffect, useState} from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from '../src/components/login/LoginPage';
 import HomePage from '../src/components/home/Home';
-import AppHeader from "./components/AppHeader";
 import {Layout} from "antd";
 import {Content} from "antd/es/layout/layout";
-import {Footer} from "antd/es/modal/shared";
 
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -27,10 +25,10 @@ const App = () => {
 
     <Router>
         <Layout style={{ minHeight: '100vh' }}>
-            <AppHeader />
+
             <Layout className="site-layout">
-                <Content style={{ margin: '0 16px' }}>
-                    <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                <Content>
+                    <div className="site-layout-background" style={{ minHeight: 360 }}>
                         <Routes>
                             <Route
                                 path="/login"

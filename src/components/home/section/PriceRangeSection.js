@@ -1,7 +1,7 @@
 // PriceRangeSection.js
 import React from 'react';
 import CustomCard from '../card/CustomCard';
-import { Typography, Alert } from 'antd';
+import { Typography } from 'antd';
 
 const { Title, Paragraph, Text } = Typography;
 

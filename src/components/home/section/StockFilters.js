@@ -18,12 +18,6 @@ const StockFilters = ({ onDateChange, onRangeChange }) => {
         }
     };
 
-    const handleRangeChange = (dates, dateStrings) => {
-        // Check if onRangeChange is defined before invoking it
-        if (onRangeChange) {
-            onRangeChange(dates, dateStrings);
-        }
-    };
 
     return (
         <div className="filters-container">
