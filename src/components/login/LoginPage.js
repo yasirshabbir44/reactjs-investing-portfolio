@@ -79,7 +79,7 @@ const LoginPage = ({onLogin}) => {
                         </Button>
                     </Form.Item>
                     <Text>
-                        <Link to="/forgot-password">Forgot Password?</Link>
+                        <Link to="#">Forgot Password?</Link>
                     </Text>
                 </Form>
             </div>

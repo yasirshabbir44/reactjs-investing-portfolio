@@ -5,7 +5,7 @@ import HistoricalDataSection from './HistoricalDataSection';
 
 const PriceSection = () => {
   return (
-    <CustomCard title="Price">
+    <CustomCard title="Price List">
       <p>
         <strong>Last Price:</strong> $195.01
       </p>
