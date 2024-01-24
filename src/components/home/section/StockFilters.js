@@ -18,6 +18,11 @@ const StockFilters = ({ onDateChange, onRangeChange }) => {
         }
     };
 
+    const handleDateRangeChange = (ranges) => {
+        console.log(ranges)
+    };
+
+
 
     return (
         <div className="filters-container">
@@ -31,7 +36,7 @@ const StockFilters = ({ onDateChange, onRangeChange }) => {
                 allowEmpty={[true, true]}
                 format="MM/DD/YYYY"
                 disabledDate={disabledDate}
-
+                onChange={onDateChange}
             />
         </div>
     );

@@ -2,17 +2,8 @@
 import React from 'react';
 import CustomCard from '../card/CustomCard';
 
-const ProfileSection = () => {
+const ProfileSection = ({ profileData }) => {
 
-    const profileData = {
-        industry: 'Technology',
-        sector: 'Information Technology',
-        employees: '147,000', // Add actual number of employees
-        headquarters: 'Cupertino, California, United States',
-        founded: 'April 1, 1976', // Add actual founding date
-        marketCap: '2.5T', // Add actual market cap
-        website: 'https://www.apple.com/', // Add actual website URL
-    };
 
   return (
     <CustomCard title="Profile">

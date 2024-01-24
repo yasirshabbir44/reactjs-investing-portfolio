@@ -5,39 +5,40 @@ import { Typography } from 'antd';
 
 const { Title, Paragraph, Text } = Typography;
 
-const PriceRangeSection = ({ daysRange, weeksRange, previousClose, open, volume }) => {
+const PriceRangeSection = ({ stockDetail }) => {
+
     return (
         <CustomCard title="Day's Range & 52-week Range">
             <Title level={3}>Stock Details</Title>
 
             <Paragraph>
-                <Text strong>Day's Range:</Text> {daysRange}
+                <Text strong>Day's Range:</Text> {stockDetail.daysRange}
             </Paragraph>
 
             <Paragraph>
-                <Text strong>52-week Range:</Text> {weeksRange}
+                <Text strong>52-week Range:</Text> {stockDetail.weeksRange}
             </Paragraph>
 
             <Paragraph>
-                <Text strong>Previous Close:</Text> {previousClose}
+                <Text strong>Previous Close:</Text> {stockDetail.previousClose}
             </Paragraph>
 
             <Paragraph>
-                <Text strong>Open:</Text> {open}
+                <Text strong>Open:</Text> {stockDetail.open}
             </Paragraph>
 
             <Paragraph>
-                <Text strong>Volume:</Text> {volume}
+                <Text strong>Volume:</Text> {stockDetail.volume}
             </Paragraph>
 
             <Paragraph>
-                <strong>Forward P/E:</strong> 28.8
+                <strong>Forward P/E:</strong> {stockDetail.forwardPE}
             </Paragraph>
             <Paragraph>
-                <strong>EPS (Earnings Per Share):</strong> $6.40
+                <strong>EPS (Earnings Per Share):</strong>{stockDetail.earningsPerShare}
             </Paragraph>
             <Paragraph>
-                <strong>Dividend Yield:</strong> 1.2%
+                <strong>Dividend Yield:</strong> {stockDetail.dividendYield}
             </Paragraph>
 
             {/* Add more details as needed */}

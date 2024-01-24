@@ -6,45 +6,40 @@ import { AppleOutlined } from '@ant-design/icons';
 
 const { Title, Text, Paragraph } = Typography;
 
-const TitleSection = () => {
+const TitleSection =  (props) => {
 
+   const stockData = props.stockValue;
 
     return (
-        <CustomCard title="Apple Inc (AAPL)">
-            <Title level={3}  >
-                <Avatar src='https://companiesmarketcap.com/img/company-logos/64/AAPL.webp'/>  AAPL
+        <CustomCard title={stockData.title}>
+            <Title level={3}>
+                <Avatar src={stockData.avatarSrc}/>  {stockData.symbol}
             </Title>
-            <Text type="secondary">NASDAQ: AAPL</Text>
-            <Text type="secondary">Currency in USD</Text>
+            <Text type="secondary">{stockData.exchange}</Text>
+            <Text type="secondary">{stockData.currency}</Text>
 
             <Paragraph>
-                <strong>Live Price:</strong> $195.01
+                <strong>Live Price:</strong> {stockData.livePrice}
             </Paragraph>
 
             <Paragraph>
-                <strong>Exchange:</strong> NASDAQ
+                <strong>Exchange:</strong> {stockData.stockExchange}
             </Paragraph>
-
-
 
             <Paragraph>
-                <strong>P/E Ratio:</strong> 30.5
+                <strong>P/E Ratio:</strong> {stockData.peRatio}
             </Paragraph>
-
-
 
             <Paragraph>
-                <strong>Shares Outstanding:</strong> 17.3 billion
+                <strong>Shares Outstanding:</strong> {stockData.sharesOutstanding}
             </Paragraph>
-
 
             <Alert
                 message="Disclaimer"
-                description="This is just a sample. Stock data may not be accurate."
+                description={stockData.disclaimer}
                 type="info"
                 showIcon
             />
-            {/* Add more details as needed */}
         </CustomCard>
     );
 };

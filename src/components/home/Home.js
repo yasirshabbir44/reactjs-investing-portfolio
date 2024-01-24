@@ -1,5 +1,5 @@
 // Home.js
-import React from 'react';
+import React, {useState} from 'react';
 import {Col, Row} from 'antd';
 import StockChart from './chart/StockChart';
 import PriceSection from './section/PriceSection';
@@ -12,24 +12,38 @@ import {generateRandomData} from "../../util/Util";
 import StockFilters from "./section/StockFilters";
 import AppHeader from "../AppHeader";
 import AppFooter from "../AppFooter";
-import '../../style.css'; // Import the common styles
+import '../../style.css';
+import stockData from "../../util/Data"; // Import the common styles
 
 
 const HomePage = () => {
 
     const startDate = new Date('2023-01-01');
     const endDate = new Date('2023-02-10'); // Adjust end date as needed
-    const minRandomValue = 100;
-    const maxRandomValue = 250;
-    const chartData = [
+    const minRandomValue = 50;
+    const maxRandomValue = 300;
+
+    const [data, setData] = useState([
         {
-            id: 'AAPL',
+            id: 'Price',
             data: generateRandomData(startDate, endDate, minRandomValue, maxRandomValue),
         },
-    ];
+        // Add more series with data
+    ]);
+
     const handleDateChange = (date, dateString) => {
         // Handle date change logic
         console.log('Selected Date:', dateString);
+        if (date.length === 2){
+            const newData = [
+                {
+                    id: 'Price',
+                    data: generateRandomData(date[0], date[1], minRandomValue, maxRandomValue)
+                },
+                // Add more series with data
+            ];
+            setData(newData);
+        }
     };
 
     const handleRangeChange = (e) => {
@@ -37,6 +51,10 @@ const HomePage = () => {
         console.log('Selected Range:', e.target.value);
     };
 
+    // Callback function to receive the selected item from the child
+    const handleItemSelected = (item) => {
+       console.log(item)
+    };
     return (
 
         <div>
@@ -44,20 +62,16 @@ const HomePage = () => {
             <div style={{padding: '24px'}}>
                 <Row gutter={[16, 16]}>
                     <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-                        <TitleSection/>
+                        <TitleSection stockValue={stockData}/>
                     </Col>
 
                     <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                         <PriceRangeSection
-                            daysRange="$192.26 - $195.10"
-                            weeksRange="$137.90 - $199.62"
-                            previousClose="$191.55"
-                            open="$192.26"
-                            volume="20M"
+                            stockDetail={stockData.stockDetails}
                         />
                     </Col>
                     <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-                        <CompaniesSection/>
+                        <CompaniesSection onItemSelected={handleItemSelected}/>
                     </Col>
 
 
@@ -65,7 +79,7 @@ const HomePage = () => {
                 <Row gutter={[16, 16]}>
 
                     <Col  xs={24} sm={24} md={16} lg={16} xl={16}>
-                        <ProfileSection/>
+                        <ProfileSection profileData={stockData.profileData}/>
                     </Col>
 
                     <Col xs={24} sm={24} md={8} lg={8} xl={8}>
@@ -79,7 +93,7 @@ const HomePage = () => {
 
 
                     <Col span={24}>
-                        <StockChart data={chartData}/>
+                        <StockChart data={data}/>
                     </Col>
 
                 </Row>
