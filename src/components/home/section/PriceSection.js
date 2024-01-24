@@ -3,7 +3,7 @@ import React from 'react';
 import CustomCard from '../card/CustomCard';
 import HistoricalDataSection from './HistoricalDataSection';
 
-const PriceSection = () => {
+const PriceSection =({ data }) => {
   return (
     <CustomCard title="Price List">
       <p>
@@ -12,7 +12,7 @@ const PriceSection = () => {
       <p>
           <strong>Change:</strong> <span style={{ color: 'green'}}>+3.46 (+1.80%)</span>
       </p>
-      <HistoricalDataSection />
+      <HistoricalDataSection data={data}/>
     </CustomCard>
   );
 };

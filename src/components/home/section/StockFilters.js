@@ -5,23 +5,11 @@ import moment from 'moment';
 
 const { RangePicker } = DatePicker;
 
-const StockFilters = ({ onDateChange, onRangeChange }) => {
+const StockFilters = ({ onDateChange }) => {
     const disabledDate = (current) => {
         // Disable dates after today
         return current && current > moment().endOf('day');
     };
-
-    const handleDateChange = (date, dateString) => {
-        // Check if onDateChange is defined before invoking it
-        if (onDateChange) {
-            onDateChange(date, dateString);
-        }
-    };
-
-    const handleDateRangeChange = (ranges) => {
-        console.log(ranges)
-    };
-
 
 
     return (

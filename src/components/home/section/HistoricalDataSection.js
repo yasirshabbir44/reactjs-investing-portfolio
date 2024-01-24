@@ -3,9 +3,9 @@ import React from 'react';
 import { Table } from 'antd';
 import '../../../style.css'; // Import the common styles
 
-const HistoricalDataSection = () => {
+const HistoricalDataSection =({ data }) => {
   // Realistic data for 30 days with varying values
-  const data = Array.from({ length: 30 }, (_, index) => {
+  const newData = Array.from({ length: 30 }, (_, index) => {
     const currentDate = new Date(2022, 0, index + 1);
     const previousDate = new Date(currentDate);
     previousDate.setDate(currentDate.getDate() - 1);

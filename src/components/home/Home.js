@@ -8,7 +8,7 @@ import ProfileSection from './section/ProfileSection';
 import NewsSection from './section/NewsSection';
 import PriceRangeSection from "./section/PriceRangeSection";
 import TitleSection from "./section/TitleSection";
-import {generateRandomData} from "../../util/Util";
+import {generateRandomData, generateTableData} from "../../util/Util";
 import StockFilters from "./section/StockFilters";
 import AppHeader from "../AppHeader";
 import AppFooter from "../AppFooter";
@@ -26,11 +26,15 @@ const HomePage = () => {
     const [data, setData] = useState([
         {
             id: 'Price',
-            data: generateRandomData(startDate, endDate, minRandomValue, maxRandomValue),
+            data: generateRandomData(startDate, endDate, minRandomValue, maxRandomValue)
         },
         // Add more series with data
     ]);
 
+    const [tableData,setTableData] = useState([
+        generateTableData(startDate,endDate)
+        // Add more series with data
+    ]);
     const handleDateChange = (date, dateString) => {
         // Handle date change logic
         console.log('Selected Date:', dateString);
@@ -43,12 +47,8 @@ const HomePage = () => {
                 // Add more series with data
             ];
             setData(newData);
+            setTableData(generateTableData(date[0], date[1]))
         }
-    };
-
-    const handleRangeChange = (e) => {
-        // Handle range change logic
-        console.log('Selected Range:', e.target.value);
     };
 
     // Callback function to receive the selected item from the child
@@ -88,7 +88,7 @@ const HomePage = () => {
 
                 </Row>
                 <h1>Historical Data</h1>
-                <StockFilters onDateChange={handleDateChange} onRangeChange={handleRangeChange}/>
+                <StockFilters onDateChange={handleDateChange}/>
                 <Row>
 
 
@@ -102,7 +102,7 @@ const HomePage = () => {
 
 
                     <Col span={24}>
-                        <PriceSection/>
+                        <PriceSection data={tableData}/>
                     </Col>
 
                 </Row>
