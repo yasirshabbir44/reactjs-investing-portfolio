@@ -4,13 +4,11 @@ import { ResponsiveLine } from '@nivo/line';
 import moment from "moment/moment";
 const StockChart = ({ data }) => {
 
-    const uniqueXValues = Array.from(new Set(data[0].data.map((d) => d.xFormatted)));
     const formatDate = (date) => {
-        console.log(date)
-        return moment(date).format('MM/DD/YYYY');
-    }
+        // Replace this with your actual date formatting logic
+        return new Date(date).toLocaleDateString();
+    };
 
-    console.log(data)
     return (
     <div style={{ height: '400px' }}>
         <ResponsiveLine
@@ -26,10 +24,9 @@ const StockChart = ({ data }) => {
                 tickPadding: 5,
                 tickRotation: -45,
                 legend: 'Date',
-                legendOffset: 36,
+                legendOffset: 100, // Adjust this value to create margin
                 legendPosition: 'middle',
-                tickValues: uniqueXValues,
-                tickFormat: (x) => formatDate(new Date(x)),
+                format: (value) => formatDate(value),
             }}
             axisLeft={{
                 orient: 'left',
@@ -45,7 +42,7 @@ const StockChart = ({ data }) => {
             pointSize={10}
             pointColor={{ theme: 'background' }}
             pointBorderWidth={2}
-            pointBorderColor={{ from: 'serieColor' }}
+            pointBorderColor={{ from: 'color' }}
             enableGridX={true}
             enableGridY={true}
             enableSlices="x"
@@ -69,7 +66,7 @@ const StockChart = ({ data }) => {
             ]}
             tooltip={({ point }) => (
                 <div style={{ background: '#fff', padding: '10px', borderRadius: '5px', boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)' }}>
-                    <strong>Date:</strong> {formatDate(new Date(point.data.xFormatted))}
+                    <strong>Date:</strong> {formatDate(point.data.x)}
                     <br />
                     <strong>{point.serieId}:</strong> {point.data.y}
                 </div>

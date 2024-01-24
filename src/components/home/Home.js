@@ -83,6 +83,7 @@ const HomePage = () => {
                     </Col>
 
                 </Row>
+                <br/>
                 <Row>
 
 
