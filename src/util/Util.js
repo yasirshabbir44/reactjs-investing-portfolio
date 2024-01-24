@@ -19,7 +19,7 @@ export const generateRandomData = (startDate, endDate, min, max) => {
 
 const day = 60 * 60 * 24 * 1000;
 
-export const generateTableData = (startDate,endDate)=> {
+export const generateTableData = (startDate, endDate, min, max) => {
 
     const newData = [];
 
@@ -38,12 +38,12 @@ export const generateTableData = (startDate,endDate)=> {
         newData.push({
             key: (index + 1).toString(),
             date: currentDate.toISOString().split('T')[0],
-            price: (195.01 + index * 2.5).toFixed(2),
-            open: (192.26 + index * 2).toFixed(2),
-            high: (195.10 + index * 3).toFixed(2),
-            low: (192.26 + index * 1.5).toFixed(2),
+            price: (min + index * 2.5).toFixed(2),
+            open: (min + index * 2).toFixed(2),
+            high: (max + index * 3).toFixed(2),
+            low: (min + index * 1.5).toFixed(2),
             volume: `${8 + index}M`,
-            previousClose: (195.01 + (index - 1) * 2.5).toFixed(2),
+            previousClose: (min + (index - 1) * 2.5).toFixed(2),
             changePercentage: (index % 2 === 0 ? -1 : 1) * (1.8 + index * 0.1).toFixed(2),
         });
     }

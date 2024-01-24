@@ -20,20 +20,18 @@ const HomePage = () => {
 
     const startDate = new Date('2023-01-01');
     const endDate = new Date('2023-02-10'); // Adjust end date as needed
-    const minRandomValue = 50;
-    const maxRandomValue = 300;
     const [index, setIndex] = useState(0);
     const [data, setData] = useState([
         {
             id: 'Price',
-            data: generateRandomData(startDate, endDate, stockData[index? index:0].stockDetails.minValue, stockData[index? index:0].stockDetails.maxValue)
+            data: generateRandomData(startDate, endDate, stockData[index ? index : 0].stockDetails.minValue, stockData[index ? index : 0].stockDetails.maxValue)
         },
         // Add more series with data
     ]);
 
 
     const [tableData, setTableData] = useState(
-        generateTableData(startDate, endDate)
+        generateTableData(startDate, endDate, stockData[index ? index : 0].stockDetails.minValue, stockData[index ? index : 0].stockDetails.maxValue)
         // Add more series with data
     );
     const handleDateChange = (date, dateString) => {
@@ -48,7 +46,7 @@ const HomePage = () => {
                 // Add more series with data
             ];
             setData(newData);
-            setTableData(generateTableData(date[0], date[1]))
+            setTableData(generateTableData(date[0], date[1], stockData[index ? index : 0].stockDetails.minValue, stockData[index ? index : 0].stockDetails.maxValue))
         }
     };
 
@@ -62,7 +60,7 @@ const HomePage = () => {
             }
         ];
         setData(newData);
-       // setTableData( generateTableData(startDate, endDate))
+        setTableData(generateTableData(startDate, endDate, stockData[index ? index : 0].stockDetails.minValue, stockData[index ? index : 0].stockDetails.maxValue))
 
     };
     return (

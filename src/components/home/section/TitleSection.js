@@ -30,6 +30,10 @@ const TitleSection = (props) => {
             </Paragraph>
 
             <Paragraph>
+                <Text strong>Volume:</Text> {stockData.volume}
+            </Paragraph>
+
+            <Paragraph>
                 <strong>Shares Outstanding:</strong> {stockData.sharesOutstanding}
             </Paragraph>
 

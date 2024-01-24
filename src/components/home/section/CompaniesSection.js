@@ -68,7 +68,7 @@ const CompaniesSection = ({onItemSelected}) => {
                         onClick={() => handleItemClick(item)}
                         style={{
                             backgroundColor: selectedItem === item ? '#e6f7ff' : 'white',
-                            cursor: 'pointer'
+                            cursor: 'pointer !important'
                         }}
                     >
                         <List.Item.Meta

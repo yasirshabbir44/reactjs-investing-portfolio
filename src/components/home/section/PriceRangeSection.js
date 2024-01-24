@@ -25,13 +25,13 @@ const PriceRangeSection = ({stockDetail}) => {
                 &emsp;<Text strong>Max Value:</Text> {stockDetail.maxValue}
             </Paragraph>
 
+
             <Paragraph>
                 <Text strong>Open:</Text> {stockDetail.open}
-                &emsp;<Text strong>Previous Close:</Text> {stockDetail.previousClose}
             </Paragraph>
 
             <Paragraph>
-                <Text strong>Volume:</Text> {stockDetail.volume}
+                <Text strong>Previous Close:</Text> {stockDetail.previousClose}
             </Paragraph>
 
             <Paragraph>

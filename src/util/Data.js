@@ -8,6 +8,7 @@ const stockData = [
         livePrice: "$195.01",
         stockExchange: "NASDAQ",
         peRatio: 30.5,
+        volume: "12M",
         sharesOutstanding: "17.3 billion",
         disclaimer: "This is just a sample. Stock data may not be accurate.",
         stockDetails: {
@@ -17,15 +18,15 @@ const stockData = [
             weeksRange: "$137.90 - $199.62",
             previousClose: "$191.55",
             open: "$192.26",
-            minValue: "10",
-            maxValue: "250",
+            minValue: 10,
+            maxValue: 250,
             volume: "20M",
             forwardPE: 28.8,
             earningsPerShare: 6.40,
             dividendYield: 1.2,
         },
         profileData: {
-            main:"Apple Inc. designs, manufactures, and markets consumer electronics, computer software, and personal computers. The company's most well-known products include the iPhone smartphones, iPad tablets, and Mac computers.",
+            main: "Apple Inc. designs, manufactures, and markets consumer electronics, computer software, and personal computers. The company's most well-known products include the iPhone smartphones, iPad tablets, and Mac computers.",
             industry: 'Technology',
             sector: 'Information Technology',
             employees: '147,000', // Add actual number of employees
@@ -36,14 +37,15 @@ const stockData = [
         }
     },
     {
-        "title": "Microsoft Corporation (MSFT)",
-        "avatarSrc": "https://companiesmarketcap.com/img/company-logos/64/MSFT.webp",
-        "symbol": "MSFT",
+        title: "Microsoft Corporation (MSFT)",
+        avatarSrc: "https://companiesmarketcap.com/img/company-logos/64/MSFT.webp",
+        symbol: "MSFT",
         "exchange": "NASDAQ: MSFT",
         "currency": "Currency in USD",
         "livePrice": "$301.42",
         "stockExchange": "NASDAQ",
         "peRatio": 35.2,
+        volume: "15M",
         "sharesOutstanding": "7.5 billion",
         "disclaimer": "This is just a sample. Stock data may not be accurate.",
         "stockDetails": {
@@ -52,8 +54,8 @@ const stockData = [
             daysRange: "$298.10 - $301.85",
             weeksRange: "$230.40 - $305.84",
             previousClose: "$297.80",
-            minValue: "50",
-            maxValue: "400",
+            minValue: 50,
+            maxValue: 400,
             open: "$299.50",
             volume: "15M",
             forwardPE: 30.4,
@@ -80,6 +82,7 @@ const stockData = [
         livePrice: "$750.23",
         stockExchange: "NASDAQ",
         peRatio: 120.2,
+        volume: "10M",
         sharesOutstanding: "775 million",
         disclaimer: "This is just a sample. Stock data may not be accurate.",
         stockDetails: {
@@ -88,8 +91,8 @@ const stockData = [
             daysRange: "$740.20 - $755.80",
             weeksRange: "$400.00 - $890.00",
             previousClose: "$742.50",
-            minValue: "10",
-            maxValue: "500",
+            minValue: 10,
+            maxValue: 500,
             open: "$743.20",
             volume: "10M",
             forwardPE: 95.5,
@@ -107,13 +110,15 @@ const stockData = [
             website: 'https://www.tesla.com/',
         }
     },
-    {title: "NVIDIA Corporation (NVDA)",
+    {
+        title: "NVIDIA Corporation (NVDA)",
         avatarSrc: "https://companiesmarketcap.com/img/company-logos/64/NVDA.png",
         symbol: "NVDA",
         exchange: "NASDAQ: NVDA",
         currency: "Currency in USD",
         livePrice: "$320.75",
         stockExchange: "NASDAQ",
+        volume: "8M",
         peRatio: 60.2,
         sharesOutstanding: "600 million",
         disclaimer: "This is just a sample. Stock data may not be accurate.",
@@ -123,8 +128,8 @@ const stockData = [
             daysRange: "$315.20 - $325.50",
             weeksRange: "$240.00 - $350.75",
             previousClose: "$315.80",
-            minValue: "20",
-            maxValue: "600",
+            minValue: 20,
+            maxValue: 600,
             open: "$318.20",
             volume: "8M",
             forwardPE: 45.5,
@@ -150,6 +155,7 @@ const stockData = [
         currency: "Currency in USD",
         livePrice: "$325.60",
         stockExchange: "NASDAQ",
+        volume: "12M",
         peRatio: 26.8,
         sharesOutstanding: "2.8 billion",
         disclaimer: "This is just a sample. Stock data may not be accurate.",
@@ -161,8 +167,8 @@ const stockData = [
             previousClose: "$321.80",
             open: "$322.50",
             volume: "12M",
-            minValue: "30",
-            maxValue: "600",
+            minValue: 30,
+            maxValue: 600,
             forwardPE: 23.5,
             earningsPerShare: 9.60,
             dividendYield: 0.8,
@@ -178,7 +184,7 @@ const stockData = [
             website: 'https://about.fb.com/',
         }
     }
-    ]
-        // Add more details as needed
+]
+// Add more details as needed
 
 export default stockData;

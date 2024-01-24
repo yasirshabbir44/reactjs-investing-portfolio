@@ -1,5 +1,4 @@
 
-
 .container {
     display: flex;
     flex-direction: column;
@@ -39,6 +38,7 @@
 .ant-typography a {
     float: right;
 }
+
 .responsive-table {
     overflow-x: auto;
     max-width: 100%;
