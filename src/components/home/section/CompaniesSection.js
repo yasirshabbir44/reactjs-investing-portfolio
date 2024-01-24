@@ -1,5 +1,5 @@
 // CompaniesSection.js
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { List, Avatar, Space } from 'antd';
 import CustomCard from '../card/CustomCard';
 
@@ -44,22 +44,34 @@ const data = [
 ];
 
 const CompaniesSection = ({ onItemSelected }) => {
+
+    const [selectedItem, setSelectedItem] = useState(null);
     const handleItemClick = (selectedItem) => {
         // Call the callback function passed from the parent
         onItemSelected(selectedItem);
+        setSelectedItem(selectedItem);
     };
+    useEffect(() => {
+        // Set the first item as the default selected item
+        if (data.length > 0) {
+            setSelectedItem(data[0]);
+        }
+    }, [data]);
 
-  return (
+    return (
     <CustomCard title="Other Companies">
         <List
             itemLayout="horizontal"
             dataSource={data}
             renderItem={(item) => (
-                <List.Item onClick={() => handleItemClick(item)} >
-
+                <List.Item
+                    onClick={() => handleItemClick(item)}
+                    style={{ backgroundColor: selectedItem === item ? '#e6f7ff' : 'white' ,
+                        cursor: 'pointer'}}
+                >
                     <List.Item.Meta
                         avatar={<Avatar src={item.logo} />}
-                        title={<a href="#">{item.companyName}</a>}
+                        title={item.companyName}
                         description={
                             <Space>
                                 <span>Stock Price: ${item.stockPrice.toFixed(2)}</span>

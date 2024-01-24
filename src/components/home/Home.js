@@ -30,6 +30,7 @@ const HomePage = () => {
         },
         // Add more series with data
     ]);
+    const [index, setIndex] = useState(0);
 
     const [tableData,setTableData] = useState([
         generateTableData(startDate,endDate)
@@ -53,7 +54,8 @@ const HomePage = () => {
 
     // Callback function to receive the selected item from the child
     const handleItemSelected = (item) => {
-       console.log(item)
+       console.log(item);
+       setIndex(item.id - 1)
     };
     return (
 
@@ -62,12 +64,12 @@ const HomePage = () => {
             <div style={{padding: '24px'}}>
                 <Row gutter={[16, 16]}>
                     <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-                        <TitleSection stockValue={stockData}/>
+                        <TitleSection stockValue={stockData[index]}/>
                     </Col>
 
                     <Col xs={24} sm={24} md={8} lg={8} xl={8}>
                         <PriceRangeSection
-                            stockDetail={stockData.stockDetails}
+                            stockDetail={stockData[index].stockDetails}
                         />
                     </Col>
                     <Col xs={24} sm={24} md={8} lg={8} xl={8}>
@@ -79,7 +81,7 @@ const HomePage = () => {
                 <Row gutter={[16, 16]}>
 
                     <Col  xs={24} sm={24} md={16} lg={16} xl={16}>
-                        <ProfileSection profileData={stockData.profileData}/>
+                        <ProfileSection profileData={stockData[index].profileData}/>
                     </Col>
 
                     <Col xs={24} sm={24} md={8} lg={8} xl={8}>

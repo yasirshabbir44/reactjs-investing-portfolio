@@ -8,9 +8,7 @@ const ProfileSection = ({ profileData }) => {
   return (
     <CustomCard title="Profile">
       <p>
-        Apple Inc. designs, manufactures, and markets consumer electronics, computer software, and
-        personal computers. The company's most well-known products include the iPhone
-        smartphones, iPad tablets, and Mac computers.
+          {profileData.main}
       </p>
 
         <p>
