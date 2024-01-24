@@ -2,10 +2,10 @@
 import React, {useState} from 'react';
 import {Button, Form, Input, message, Typography} from 'antd';
 import {LockOutlined, UserOutlined} from '@ant-design/icons';
-import {useNavigate,Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import '../../style.css'; // Import the common styles
 
-const { Title, Text } = Typography;
+const {Title, Text} = Typography;
 
 const LoginPage = ({onLogin}) => {
     const [username, setUsername] = useState('');
@@ -41,21 +41,22 @@ const LoginPage = ({onLogin}) => {
             <div className="form-container"> {/* Apply common styles */}
                 <div className="logo-container">
                     {/* Replace 'your-logo.png' with your actual logo */}
-                    <img src="https://dubaiholding.com/wp-content/themes/dubaiholding/images/foo-logo.png" alt="Logo" className="logo" />
+                    <img src="https://dubaiholding.com/wp-content/themes/dubaiholding/images/foo-logo.png" alt="Logo"
+                         className="logo"/>
                 </div>
 
                 <Form
                     name="loginForm"
-                    initialValues={{ remember: true }}
+                    initialValues={{remember: true}}
                     onFinish={handleLogin}
                     size="large"
                 >
                     <Form.Item
                         name="username"
-                        rules={[{ required: true, message: 'Please input your username!' }]}
+                        rules={[{required: true, message: 'Please input your username!'}]}
                     >
                         <Input
-                            prefix={<UserOutlined style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            prefix={<UserOutlined style={{color: 'rgba(0,0,0,.25)'}}/>}
                             placeholder="Username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
@@ -63,10 +64,10 @@ const LoginPage = ({onLogin}) => {
                     </Form.Item>
                     <Form.Item
                         name="password"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
+                        rules={[{required: true, message: 'Please input your password!'}]}
                     >
                         <Input.Password
-                            prefix={<LockOutlined style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            prefix={<LockOutlined style={{color: 'rgba(0,0,0,.25)'}}/>}
                             type="password"
                             placeholder="Password"
                             value={password}

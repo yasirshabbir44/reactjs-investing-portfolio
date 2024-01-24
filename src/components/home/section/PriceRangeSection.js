@@ -1,11 +1,11 @@
 // PriceRangeSection.js
 import React from 'react';
 import CustomCard from '../card/CustomCard';
-import { Typography } from 'antd';
+import {Typography} from 'antd';
 
-const { Title, Paragraph, Text } = Typography;
+const {Title, Paragraph, Text} = Typography;
 
-const PriceRangeSection = ({ stockDetail }) => {
+const PriceRangeSection = ({stockDetail}) => {
 
     return (
         <CustomCard title="Day's Range & 52-week Range">

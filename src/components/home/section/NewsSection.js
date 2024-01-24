@@ -1,7 +1,7 @@
 // NewsSection.js
 import React from 'react';
 import CustomCard from '../card/CustomCard';
-import { List, Avatar } from 'antd';
+import {Avatar, List} from 'antd';
 
 const newsData = [
     'Apple announces record-breaking quarterly revenue',
@@ -14,21 +14,21 @@ const newsData = [
 const placeholderNewsIcon = 'https://cdn.example.com/news-icon.png'; // Replace with an actual news icon URL
 
 const NewsSection = () => {
-  return (
-    <CustomCard title="Latest News">
-        <List
-            dataSource={newsData}
-            renderItem={(item) => (
-                <List.Item>
-                    <List.Item.Meta
-                        avatar={<Avatar src={placeholderNewsIcon} />}
-                        title={<a href="#">{item}</a>}
-                    />
-                </List.Item>
-            )}
-        />
-    </CustomCard>
-  );
+    return (
+        <CustomCard title="Latest News">
+            <List
+                dataSource={newsData}
+                renderItem={(item) => (
+                    <List.Item>
+                        <List.Item.Meta
+                            avatar={<Avatar src={placeholderNewsIcon}/>}
+                            title={<a href="#">{item}</a>}
+                        />
+                    </List.Item>
+                )}
+            />
+        </CustomCard>
+    );
 };
 
 export default NewsSection;

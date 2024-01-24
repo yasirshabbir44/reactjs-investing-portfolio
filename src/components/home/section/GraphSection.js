@@ -1,16 +1,16 @@
 // GraphSection.js
 import React from 'react';
 import CustomCard from '../card/CustomCard';
-import { ResponsiveLine } from '@nivo/line';
+import {ResponsiveLine} from '@nivo/line';
 
-const GraphSection = ({ graphData }) => {
+const GraphSection = ({graphData}) => {
     return (
         <CustomCard title="Graph Data">
             <ResponsiveLine
                 data={graphData}
-                margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-                xScale={{ type: 'point' }}
-                yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: true, reverse: false }}
+                margin={{top: 50, right: 110, bottom: 50, left: 60}}
+                xScale={{type: 'point'}}
+                yScale={{type: 'linear', min: 'auto', max: 'auto', stacked: true, reverse: false}}
                 yFormat=" >-.2f"
                 axisTop={null}
                 axisRight={null}
@@ -32,11 +32,11 @@ const GraphSection = ({ graphData }) => {
                     legendOffset: -40,
                     legendPosition: 'middle',
                 }}
-                colors={{ scheme: 'nivo' }}
+                colors={{scheme: 'nivo'}}
                 pointSize={10}
-                pointColor={{ theme: 'background' }}
+                pointColor={{theme: 'background'}}
                 pointBorderWidth={2}
-                pointBorderColor={{ from: 'serieColor' }}
+                pointBorderColor={{from: 'serieColor'}}
                 pointLabelYOffset={-12}
                 useMesh={true}
             />

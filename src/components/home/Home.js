@@ -32,14 +32,14 @@ const HomePage = () => {
     ]);
     const [index, setIndex] = useState(0);
 
-    const [tableData,setTableData] = useState([
-        generateTableData(startDate,endDate)
+    const [tableData, setTableData] = useState(
+        generateTableData(startDate, endDate)
         // Add more series with data
-    ]);
+    );
     const handleDateChange = (date, dateString) => {
         // Handle date change logic
         console.log('Selected Date:', dateString);
-        if (date.length === 2){
+        if (date.length === 2) {
             const newData = [
                 {
                     id: 'Price',
@@ -54,8 +54,7 @@ const HomePage = () => {
 
     // Callback function to receive the selected item from the child
     const handleItemSelected = (item) => {
-       console.log(item);
-       setIndex(item.id - 1)
+        setIndex(item.id - 1)
     };
     return (
 
@@ -80,7 +79,7 @@ const HomePage = () => {
                 </Row>
                 <Row gutter={[16, 16]}>
 
-                    <Col  xs={24} sm={24} md={16} lg={16} xl={16}>
+                    <Col xs={24} sm={24} md={16} lg={16} xl={16}>
                         <ProfileSection profileData={stockData[index].profileData}/>
                     </Col>
 
@@ -101,8 +100,6 @@ const HomePage = () => {
                 </Row>
                 <br/>
                 <Row>
-
-
                     <Col span={24}>
                         <PriceSection data={tableData}/>
                     </Col>
@@ -110,7 +107,7 @@ const HomePage = () => {
                 </Row>
             </div>
 
-           <AppFooter/>
+            <AppFooter/>
         </div>
     );
 };

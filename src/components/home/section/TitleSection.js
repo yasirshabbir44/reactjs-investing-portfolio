@@ -1,19 +1,18 @@
 // ProfileSection.js
 import React from 'react';
 import CustomCard from '../card/CustomCard';
-import {Typography, Alert, Avatar} from 'antd';
-import { AppleOutlined } from '@ant-design/icons';
+import {Alert, Avatar, Typography} from 'antd';
 
-const { Title, Text, Paragraph } = Typography;
+const {Title, Text, Paragraph} = Typography;
 
-const TitleSection =  (props) => {
+const TitleSection = (props) => {
 
-   const stockData = props.stockValue;
+    const stockData = props.stockValue;
 
     return (
         <CustomCard title={stockData.title}>
             <Title level={3}>
-                <Avatar src={stockData.avatarSrc}/>  {stockData.symbol}
+                <Avatar src={stockData.avatarSrc}/> {stockData.symbol}
             </Title>
             <Text type="secondary">{stockData.exchange}</Text>
             <Text type="secondary">{stockData.currency}</Text>
