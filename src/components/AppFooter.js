@@ -23,15 +23,6 @@ const AppFooter = () => {
                             </p>
                         </Col>
 
-                        <Col>
-                            <Link href="#" target="_blank">
-                                Privacy Policy
-                            </Link>
-                            <span style={{ margin: '0 8px' }}>|</span>
-                            <Link href="#" target="_blank">
-                                Terms of Service
-                            </Link>
-                        </Col>
                     </Row>
                 </Col>
             </Row>
