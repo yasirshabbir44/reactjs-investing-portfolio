@@ -13,6 +13,7 @@ const PriceRangeSection = ({stockDetail}) => {
 
             <Paragraph>
                 <Text strong>Day's Range:</Text> {stockDetail.daysRange}
+
             </Paragraph>
 
             <Paragraph>
@@ -20,11 +21,13 @@ const PriceRangeSection = ({stockDetail}) => {
             </Paragraph>
 
             <Paragraph>
-                <Text strong>Previous Close:</Text> {stockDetail.previousClose}
+                <Text strong>Min Value:</Text> {stockDetail.minValue}
+                &emsp;<Text strong>Max Value:</Text> {stockDetail.maxValue}
             </Paragraph>
 
             <Paragraph>
                 <Text strong>Open:</Text> {stockDetail.open}
+                &emsp;<Text strong>Previous Close:</Text> {stockDetail.previousClose}
             </Paragraph>
 
             <Paragraph>

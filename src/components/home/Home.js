@@ -22,15 +22,15 @@ const HomePage = () => {
     const endDate = new Date('2023-02-10'); // Adjust end date as needed
     const minRandomValue = 50;
     const maxRandomValue = 300;
-
+    const [index, setIndex] = useState(0);
     const [data, setData] = useState([
         {
             id: 'Price',
-            data: generateRandomData(startDate, endDate, minRandomValue, maxRandomValue)
+            data: generateRandomData(startDate, endDate, stockData[index? index:0].stockDetails.minValue, stockData[index? index:0].stockDetails.maxValue)
         },
         // Add more series with data
     ]);
-    const [index, setIndex] = useState(0);
+
 
     const [tableData, setTableData] = useState(
         generateTableData(startDate, endDate)
@@ -43,7 +43,7 @@ const HomePage = () => {
             const newData = [
                 {
                     id: 'Price',
-                    data: generateRandomData(date[0], date[1], minRandomValue, maxRandomValue)
+                    data: generateRandomData(date[0], date[1], stockData[index].stockDetails.minValue, stockData[index].stockDetails.maxValue)
                 },
                 // Add more series with data
             ];
@@ -54,7 +54,16 @@ const HomePage = () => {
 
     // Callback function to receive the selected item from the child
     const handleItemSelected = (item) => {
-        setIndex(item.id - 1)
+        setIndex(item.id - 1);
+        const newData = [
+            {
+                id: 'Price',
+                data: generateRandomData(startDate, endDate, stockData[index].stockDetails.minValue, stockData[index].stockDetails.maxValue)
+            }
+        ];
+        setData(newData);
+       // setTableData( generateTableData(startDate, endDate))
+
     };
     return (
 

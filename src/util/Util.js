@@ -3,6 +3,7 @@ export const generateRandomData = (startDate, endDate, min, max) => {
     const data = [];
     const currentDate = new Date(startDate);
 
+
     while (currentDate <= endDate) {
         const randomValue = Math.floor(Math.random() * (max - min + 1)) + min;
         data.push({
