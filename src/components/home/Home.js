@@ -1,6 +1,6 @@
 // Home.js
 import React, {useState} from 'react';
-import {Col, Row} from 'antd';
+import {Col, Row,Space, Spin} from 'antd';
 import StockChart from './chart/StockChart';
 import PriceSection from './section/PriceSection';
 import CompaniesSection from './section/CompaniesSection';
@@ -21,6 +21,7 @@ const HomePage = () => {
     const startDate = new Date('2023-01-01');
     const endDate = new Date('2023-02-10'); // Adjust end date as needed
     const [index, setIndex] = useState(0);
+    const [loading, setLoading] = useState(false);
     const [data, setData] = useState([
         {
             id: 'Price',
@@ -36,37 +37,56 @@ const HomePage = () => {
     );
     const handleDateChange = (date, dateString) => {
         // Handle date change logic
-        console.log('Selected Date:', dateString);
         if (date.length === 2) {
-            const newData = [
-                {
-                    id: 'Price',
-                    data: generateRandomData(date[0], date[1], stockData[index].stockDetails.minValue, stockData[index].stockDetails.maxValue)
-                },
-                // Add more series with data
-            ];
-            setData(newData);
-            setTableData(generateTableData(date[0], date[1], stockData[index ? index : 0].stockDetails.minValue, stockData[index ? index : 0].stockDetails.maxValue))
+
+            setLoading(true);
+            // Perform asynchronous tasks or API calls here
+            setTimeout(() => {
+                const newData = [
+                    {
+                        id: 'Price',
+                        data: generateRandomData(date[0], date[1], stockData[index].stockDetails.minValue, stockData[index].stockDetails.maxValue)
+                    },
+                    // Add more series with data
+                ];
+                setData(newData);
+                setTableData(generateTableData(date[0], date[1], stockData[index ? index : 0].stockDetails.minValue, stockData[index ? index : 0].stockDetails.maxValue))
+                setLoading(false);
+            }, 400); // Simulating a delay for demonstration purposes
+
         }
     };
 
     // Callback function to receive the selected item from the child
     const handleItemSelected = (item) => {
-        setIndex(item.id - 1);
-        const newData = [
-            {
-                id: 'Price',
-                data: generateRandomData(startDate, endDate, stockData[index].stockDetails.minValue, stockData[index].stockDetails.maxValue)
-            }
-        ];
-        setData(newData);
-        setTableData(generateTableData(startDate, endDate, stockData[index ? index : 0].stockDetails.minValue, stockData[index ? index : 0].stockDetails.maxValue))
+        setLoading(true);
+        // Perform asynchronous tasks or API calls here
+        setTimeout(() => {
+            setIndex(item.id - 1);
+            const newData = [
+                {
+                    id: 'Price',
+                    data: generateRandomData(startDate, endDate, stockData[index].stockDetails.minValue, stockData[index].stockDetails.maxValue)
+                }
+            ];
+            setData(newData);
+            setTableData(generateTableData(startDate, endDate, stockData[index ? index : 0].stockDetails.minValue, stockData[index ? index : 0].stockDetails.maxValue))
+            setLoading(false);
+        }, 400); // Simulating a delay for demonstration purposes
+
 
     };
     return (
 
         <div>
             <AppHeader/>
+            {loading && (
+                <div className="overlay">
+                    <div className="loader-container">
+                        <Spin size="large" />
+                    </div>
+                </div>
+            )}
             <div style={{padding: '24px'}}>
                 <Row gutter={[16, 16]}>
                     <Col xs={24} sm={24} md={8} lg={8} xl={8}>
@@ -115,6 +135,8 @@ const HomePage = () => {
             </div>
 
             <AppFooter/>
+
+
         </div>
     );
 };
