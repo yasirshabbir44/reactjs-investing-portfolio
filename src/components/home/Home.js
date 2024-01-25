@@ -1,6 +1,6 @@
 // Home.js
 import React, {useState} from 'react';
-import {Col, Row,Space, Spin} from 'antd';
+import {Col, Row, Spin} from 'antd';
 import StockChart from './chart/StockChart';
 import PriceSection from './section/PriceSection';
 import CompaniesSection from './section/CompaniesSection';
@@ -83,7 +83,7 @@ const HomePage = () => {
             {loading && (
                 <div className="overlay">
                     <div className="loader-container">
-                        <Spin size="large" />
+                        <Spin size="large"/>
                     </div>
                 </div>
             )}
