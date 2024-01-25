@@ -1,8 +1,7 @@
 import React from 'react';
-import {Col, Layout, Row, Typography} from 'antd';
+import {Col, Layout, Row} from 'antd';
 
 const {Footer} = Layout;
-const {Link} = Typography;
 
 const AppFooter = () => {
     return (

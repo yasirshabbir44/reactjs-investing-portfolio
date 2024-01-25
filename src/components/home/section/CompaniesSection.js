@@ -3,46 +3,8 @@ import React, {useEffect, useState} from 'react';
 import {Avatar, List, Space} from 'antd';
 import CustomCard from '../card/CustomCard';
 import '../../../style.css';
+import {companyList} from "../../../util/Data";
 
-
-const data = [
-    {
-        id: 1,
-        companyName: 'Apple Inc',
-        stockPrice: 195.01,
-        changePercentage: 1.8,
-        logo: 'https://companiesmarketcap.com/img/company-logos/64/AAPL.webp', // Replace with actual logo URL
-    },
-    {
-        id: 2,
-        companyName: 'Microsoft Corporation',
-        stockPrice: 300.45,
-        changePercentage: -0.5,
-        logo: 'https://companiesmarketcap.com/img/company-logos/64/MSFT.webp', // Replace with actual logo URL
-    },
-    {
-        id: 3,
-        companyName: 'Tesla Inc',
-        stockPrice: 850.22,
-        changePercentage: 2.5,
-        logo: 'https://companiesmarketcap.com/img/company-logos/64/TSLA.webp', // Replace with actual logo URL
-    },
-    {
-        id: 4,
-        companyName: 'Nvidia Corporation',
-        stockPrice: 400.75,
-        changePercentage: 1.2,
-        logo: 'https://companiesmarketcap.com/img/company-logos/64/NVDA.webp', // Replace with actual logo URL
-    },
-    {
-        id: 5,
-        companyName: 'Meta Platforms (Facebook)',
-        stockPrice: 381.78,
-        changePercentage: 3.2,
-        logo: 'https://companiesmarketcap.com/img/company-logos/256/META.webp', // Replace with actual logo URL
-    },
-    // Add more companies as needed
-];
 
 const CompaniesSection = ({onItemSelected}) => {
 
@@ -54,16 +16,16 @@ const CompaniesSection = ({onItemSelected}) => {
     };
     useEffect(() => {
         // Set the first item as the default selected item
-        if (data.length > 0) {
-            setSelectedItem(data[0]);
+        if (companyList.length > 0) {
+            setSelectedItem(companyList[0]);
         }
-    }, [data]);
+    }, [companyList]);
 
     return (
         <CustomCard title="Other Companies">
             <List
                 itemLayout="horizontal"
-                dataSource={data}
+                dataSource={companyList}
                 renderItem={(item) => (
                     <List.Item
                         onClick={() => handleItemClick(item)}

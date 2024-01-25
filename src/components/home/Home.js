@@ -10,10 +10,10 @@ import PriceRangeSection from "./section/PriceRangeSection";
 import TitleSection from "./section/TitleSection";
 import {generateRandomData, generateTableData} from "../../util/Util";
 import StockFilters from "./section/StockFilters";
-import AppHeader from "../AppHeader";
-import AppFooter from "../AppFooter";
+import AppHeader from "../header/AppHeader";
+import AppFooter from "../footer/AppFooter";
 import '../../style.css';
-import stockData from "../../util/Data"; // Import the common styles
+import {stockData} from "../../util/Data";
 
 
 const HomePage = () => {

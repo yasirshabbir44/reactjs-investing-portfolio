@@ -64,19 +64,29 @@ const StockChart = ({data}) => {
                         symbolShape: 'circle',
                     },
                 ]}
-                tooltip={({point}) => (
-                    <div style={{
-                        background: '#fff',
-                        padding: '10px',
-                        borderRadius: '5px',
-                        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)'
-                    }}>
-                        <strong>Date:</strong> {formatDate(point.data.x)}
-                        <br/>
-                        <strong>{point.serieId}:</strong> {point.data.y}
-                    </div>
-                )}
+                tooltip={({point, slice}) => {
+                    // Find the highest price in the current slice
+                    const highestPricePoint = slice.points.reduce((maxPoint, currentPoint) =>
+                        currentPoint.data.y > maxPoint.data.y ? currentPoint : maxPoint
+                    );
+
+                    return (
+                        <div style={{
+                            background: '#fff',
+                            padding: '10px',
+                            borderRadius: '5px',
+                            boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)'
+                        }}>
+                            <strong>Date:</strong> {formatDate(point.data.x)}
+                            <br/>
+                            <strong>{point.serieId}:</strong> {point.data.y}
+                            <br/>
+                            <strong>Highest Price:</strong> {highestPricePoint.data.y}
+                        </div>
+                    );
+                }}
             />
+
         </div>
     );
 };

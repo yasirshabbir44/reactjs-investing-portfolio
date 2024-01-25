@@ -11,7 +11,7 @@ const newsData = [
     'Amazon to launch next-gen Echo devices with AI capabilities',
     // Add more news items as needed
 ];
-const placeholderNewsIcon = 'https://cdn.example.com/news-icon.png'; // Replace with an actual news icon URL
+const placeholderNewsIcon = 'https://cdn-icons-png.freepik.com/512/1416/1416039.png'; // Replace with an actual news icon URL
 
 const NewsSection = () => {
     return (
@@ -22,7 +22,7 @@ const NewsSection = () => {
                     <List.Item>
                         <List.Item.Meta
                             avatar={<Avatar src={placeholderNewsIcon}/>}
-                            title={<a href="#">{item}</a>}
+                            title={<a>{item}</a>}
                         />
                     </List.Item>
                 )}
