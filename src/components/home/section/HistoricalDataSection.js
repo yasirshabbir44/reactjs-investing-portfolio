@@ -56,7 +56,7 @@ const HistoricalDataSection = ({data}) => {
     ];
 
     return (
-        <Table dataSource={data} columns={columns} className="responsive-table"  pagination={{ showSizeChanger: true, showQuickJumper: true }}/>
+        <Table dataSource={data} columns={columns} className="responsive-table"  align="center" showHeader={true} bordered={true} pagination={{ showSizeChanger: true, showQuickJumper: true }}/>
     );
 };
 
