@@ -118,12 +118,9 @@ const HomePage = () => {
                 <h1>Historical Data</h1>
                 <StockFilters onDateChange={handleDateChange}/>
                 <Row>
-
-
                     <Col span={24}>
                         <StockChart data={data}/>
                     </Col>
-
                 </Row>
                 <br/>
                 <Row>

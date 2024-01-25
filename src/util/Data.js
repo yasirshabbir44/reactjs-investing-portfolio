@@ -1,3 +1,13 @@
+
+
+export const newsData = [
+    'Apple announces record-breaking quarterly revenue',
+    'Tesla surpasses market expectations with Q3 earnings',
+    'Nvidia introduces groundbreaking graphics card at CES 2023',
+    'Microsoft unveils new features in upcoming Windows 11 update',
+    'Amazon to launch next-gen Echo devices with AI capabilities',
+    // Add more news items as needed
+];
 export const stockData = [
     {
         title: "Apple Inc (AAPL)",

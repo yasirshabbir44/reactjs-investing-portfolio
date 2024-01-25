@@ -1,4 +1,4 @@
-// ProfileSection.js
+// TitleSection.js
 import React from 'react';
 import CustomCard from '../card/CustomCard';
 import {Alert, Avatar, Typography} from 'antd';
