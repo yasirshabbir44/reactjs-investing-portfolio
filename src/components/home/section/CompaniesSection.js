@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import {Avatar, List, Space} from 'antd';
 import CustomCard from '../card/CustomCard';
+import '../../../style.css';
 
 
 const data = [
@@ -68,7 +69,7 @@ const CompaniesSection = ({onItemSelected}) => {
                         onClick={() => handleItemClick(item)}
                         style={{
                             backgroundColor: selectedItem === item ? '#e6f7ff' : 'white',
-                            cursor: 'pointer !important'
+                            cursor: 'pointer',
                         }}
                     >
                         <List.Item.Meta

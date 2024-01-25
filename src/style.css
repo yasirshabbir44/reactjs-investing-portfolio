@@ -82,3 +82,12 @@
         max-width: 100%;
     }
 }
+
+
+.list-item {
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+}
+
+.list-item:hover {
+    background-color: #e6f7ff !important; /* Add !important to override other styles if needed */
+}
